@@ -141,7 +141,8 @@ Map.prototype.getPopupContent = function (districtName, groupNameInPopup, punish
             ((this.populationOfThisGroup === 0) ? groupNameInPopup : punishmentType) +
             "</b> for the <b>" + this.schoolYear + "</b> school year.";
     }
-    else if (this.punishmentTotal !== null && this.populationOfThisGroup !== null){
+    else if (this.punishmentTotal != null && this.punishmentOfThisGroup != null &&
+             this.populationTotal != null && this.populationOfThisGroup != null) {
         const percentStudentsByGroup = Number(this.populationOfThisGroup) * 100.0 / Number(this.populationTotal);
         const punishmentPercent = Number(this.punishmentOfThisGroup) * 100.0 / Number(this.punishmentTotal);
         popupContent = "In <b>" + districtName + "</b>, the " +
